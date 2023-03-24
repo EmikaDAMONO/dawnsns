@@ -18,6 +18,7 @@ class CreateFollowsTable extends Migration
             $table->integer('follow_id');
             $table->integer('follower_id');
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('follow_id')->references('id')->on('users');
         });
     }
 
