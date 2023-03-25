@@ -22,7 +22,7 @@ class CustomersTableSeeder extends Seeder
                 'bio' => '身体はあんパンでできている。',
                 'images' => 'dawn.png',
                 'created_at' => '2021-3-2 18:35:48',
-                'modified_at' => '2021-3-2 18:35:48',
+                'updated_at' => '2021-3-2 18:35:48',
             ],
             [
                 'username' => 'すぐるんるん',
@@ -31,7 +31,7 @@ class CustomersTableSeeder extends Seeder
                 'bio' => 'オッサンではない',
                 'images' => 'dawn.png',
                 'created_at' => '2021-2-1 11:30:03',
-                'modified_at' => '2021-3-3 08:17:22',
+                'updated_at' => '2021-3-3 08:17:22',
             ],
             [
                 'username' => '城ヶ崎弟',
@@ -40,7 +40,7 @@ class CustomersTableSeeder extends Seeder
                 'bio' => '浮上率低め。',
                 'images' => 'dawn.png',
                 'created_at' => '2021-2-1 10:30:03',
-                'modified_at' => '2021-3-3 08:12:20',
+                'updated_at' => '2021-3-3 08:12:20',
             ],
             [
                 'username' => 'キャシー',
@@ -49,7 +49,7 @@ class CustomersTableSeeder extends Seeder
                 'bio' => 'にゃんこの画像bot',
                 'images' => 'dawn.png',
                 'created_at' => '2021-2-1 10:45:03',
-                'modified_at' => '2021-3-3 21:03:43',
+                'updated_at' => '2021-3-3 21:03:43',
             ],
             [
                 'username' => 'ベティー',
@@ -58,7 +58,7 @@ class CustomersTableSeeder extends Seeder
                 'bio' => 'お仕事はDMかメールで。次→M.J.collection',
                 'images' => 'dawn.png',
                 'created_at' => '2021-2-1 10:45:03',
-                'modified_at' => '2021-3-3 00:10:52',
+                'updated_at' => '2021-3-3 00:10:52',
             ],
         ]);
     }
