@@ -11,7 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
+//Route::get('/', function () {
 //     return view('welcome');
 // });
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -38,6 +38,3 @@ Route::get('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
-
-
-

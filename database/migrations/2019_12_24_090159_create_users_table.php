@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('images',255)->default('dawn.png')->nullable();
             $table->timestamp('created_at')
             ->useCurrent();
-            $table->timestamp('modified_at')
+            $table->timestamp('updated_at')
             ->useCurrent()
             ->onUpdate('cascade');
         });

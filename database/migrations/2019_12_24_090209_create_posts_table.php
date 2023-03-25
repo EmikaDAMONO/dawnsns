@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('post',400);
             $table->timestamp('created_at')
             ->useCurrent();
-            $table->timestamp('modified_at')
+            $table->timestamp('updated_at')
             ->useCurrent()
             ->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users');

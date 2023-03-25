@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/added';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -54,11 +54,12 @@ class RegisterController extends Controller
             'mail' => 'required|email|min:4|max:12|unique:users',
             'password' => 'required|alpha_num|min:4|max:12',
             'password-confirm' => 'required|min:4|max:12|same:password',
-            //プロフィール用バリデーション
+            //プロフィール更新用バリデーション
             'profile-username' => 'min:4|max:12',
             'profile-mail' => ['email', 'min:4', 'max:12', 'unique:users', Rule::exists('users', 'mail')],
-            'profile-password' => 'required|alpha_num|min:4|max:12',
-            'profile-password-confirm' => 'required|min:4|max:12|same:profile-password',
+            'profile-new-password' => 'required|alpha_num|min:4|max:12|different:password',
+            'profile-bio' => 'min:200',
+            'icon-image' => 'alpha_num|image',
         ],
     [
 		'mail.required' => '必須項目です',
