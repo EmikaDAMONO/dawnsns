@@ -49,10 +49,29 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
-        ]);
+             //ユーザー登録用バリデーション
+            'username' => 'required|min:4|max:12',
+            'mail' => 'required|email|min:4|max:12|unique:users',
+            'password' => 'required|alpha_num|min:4|max:12',
+            'password-confirm' => 'required|min:4|max:12|same:password',
+            //プロフィール用バリデーション
+            'profile-username' => 'min:4|max:12',
+            'profile-mail' => ['email', 'min:4', 'max:12', 'unique:users', Rule::exists('users', 'mail')],
+            'profile-password' => 'required|alpha_num|min:4|max:12',
+            'profile-password-confirm' => 'required|min:4|max:12|same:profile-password',
+        ],
+    [
+		'mail.required' => '必須項目です',
+		'mail.email' => 'メールアドレスではありません',
+		'password.required' => '必須項目です',
+		'password.min' => '4文字以上で入力してください',
+        'password.max' => '12文字以下で入力してください',
+		'password-confirm.required' => '必須項目です',
+		'password-confirm.min' => '4文字以上で入力してください',
+		'password-confirm.max' => '12文字以下で入力してください',
+		'password-confirm.same' => 'パスワードと確認用パスワードが一致していません',
+	]
+    );
     }
 
     /**

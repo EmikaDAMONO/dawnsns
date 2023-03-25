@@ -16,7 +16,7 @@ class CustomersTableSeeder extends Seeder
         //
             DB::table('users')->insert([
             [
-                'username' => '花子T',
+                'username' => '田中花子',
                 'mail' => 'anpan@mail.com',
                 'password' => Hash::make('anpanl0ve'), //パスワードをハッシュ化、もとの文字列から変換する
                 'bio' => '身体はあんパンでできている。',
@@ -25,7 +25,7 @@ class CustomersTableSeeder extends Seeder
                 'modified_at' => '2021-3-2 18:35:48',
             ],
             [
-                'username' => 'スグル',
+                'username' => 'すぐるんるん',
                 'mail' => 'suguru@mail.com',
                 'password' => Hash::make('anpanl0ve'), //パスワードをハッシュ化、もとの文字列から変換する
                 'bio' => 'オッサンではない',
