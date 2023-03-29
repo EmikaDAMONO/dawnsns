@@ -22,16 +22,22 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="/images/main_logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="arrow.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
+         <h1 class="top-logo"><a href="/top"><img src="/images/main_logo.png"></a></h1>
+            <div id="top-menu">
+                <div id="menu-trigger">
+                        <div class="menu-name">
+                        <p>〇〇さん</p>
+                        <p>V</p>
+                        <p><img src="/images/dawn.png"></p>
+                        </div>
+                </div>
+                <div class="g-navi">
+                 <ul>
+                    <li><a href="/top">HOME</a></li>
+                    <li><a href="/profile">プロフィール編集</a></li>
                     <li><a href="/logout">ログアウト</a></li>
-                </ul>
+                 </ul>
+                </div>
             </div>
         </div>
     </header>

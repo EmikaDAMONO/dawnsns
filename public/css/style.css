@@ -1,22 +1,84 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#3C4767;
+header {
+    background: #3C4767;
+}
+
+
+.top-logo a img {
+    width: 154px;
+    margin-left: 41px;
+}
+
+
+.menu-name {
+    width: 204px;
+    height: 35px;
+
+    position: absolute;
+    left: 1052px;
+    top: 20px;
+    border: 1px solid #707070;
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    /* justify-content:flex要素の横位置設定 */
+    align-items: center;
+    /* align-items:flex要素の縦位置設定 */
+}
+
+.menu-name img {
+    border-radius: 50%;
+    height: 35px;
+}
+
+/* ハンバーガーメニュー */
+.g-navi {
+    position: absolute;
+    left: 80%;
+    width: 256px;
+    height: 243px;
+}
+
+.g-navi ul {
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid #707070;
+}
+
+.g-navi ul li {
+    text-align: center;
+}
+
+.g-navi ul li a {
+    display: block;
+    color: #6C6C6C;
+    padding: 20px 0;
+    /* padding:内側の余白設定 */
+}
+
+.g-navi ul li a:hover {
+    color: #FFFFFF;
+    background-color: #E2563B;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #6C6C6C;
 }
