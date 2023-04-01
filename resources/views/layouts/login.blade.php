@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./js/script.js"></script>
 <meta charset="utf-8" />
     <!--IEブラウザ対策-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,13 +26,16 @@
         <div id = "head">
          <h1 class="top-logo"><a href="/top"><img src="/images/main_logo.png"></a></h1>
             <div id="top-menu">
-                <div id="menu-trigger">
-                        <div class="menu-name">
-                        <p>〇〇さん</p>
-                        <p>V</p>
-                        <p><img src="/images/dawn.png"></p>
+
+                    <div id="menu-name">
+                        <p class="menu-name-btn">〇〇さん</p>
+                        <div class="menu-trigger">
+                        <span class="menu-v1"></span>
+                        <span class="menu-v2"></span>
                         </div>
-                </div>
+                        <p><img src="/images/dawn.png"></p>
+                    </div>
+
                 <div class="g-navi">
                  <ul>
                     <li><a href="/top">HOME</a></li>
@@ -41,6 +46,7 @@
             </div>
         </div>
     </header>
+
     <div id="row">
         <div id="container">
             @yield('content')

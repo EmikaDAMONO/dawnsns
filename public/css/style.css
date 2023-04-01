@@ -15,13 +15,14 @@ header {
     margin-left: 41px;
 }
 
+/* アコーディオンメニュー */
 
-.menu-name {
+#menu-name {
     width: 204px;
     height: 35px;
 
     position: absolute;
-    left: 1052px;
+    left: 80%;
     top: 20px;
     border: 1px solid #707070;
     display: flex;
@@ -31,29 +32,78 @@ header {
     /* justify-content:flex要素の横位置設定 */
     align-items: center;
     /* align-items:flex要素の縦位置設定 */
+    color: #FFFFFF;
 }
 
-.menu-name img {
+#menu-name img {
     border-radius: 50%;
     height: 35px;
 }
 
-/* ハンバーガーメニュー */
+.menu-name-btn {
+    cursor: pointer;
+    font-size: 10pt;
+}
+
+
+.menu-trigger {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.menu-trigger span:nth-child(1) {
+
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 12px;
+    border-bottom: solid 1px #fff;
+    border-radius: 1px;
+    transform: rotate(-60deg);
+    transition: .5s ease-in-out;
+}
+
+.menu-trigger span:nth-child(2) {
+    display: block;
+    position: absolute;
+    top: 12px;
+    width: 12px;
+    border-bottom: solid 1px #fff;
+    border-radius: 1px;
+    transform: rotate(60deg);
+    transition: .5s ease-in-out;
+}
+
+.menu-trigger.active span:nth-child(1) {
+    top: 12px;
+    left: 6px;
+    transform: rotate(60deg);
+    transition: .5s ease-in-out;
+}
+
+.menu-trigger.active span:nth-child(2) {
+    top: 12px;
+    transform: rotate(-60deg);
+    transition: .5s ease-in-out;
+}
+
 .g-navi {
+    transform: translateY(-200%);
+
+    display: block;
     position: absolute;
     left: 80%;
     width: 256px;
-    height: 243px;
-}
-
-.g-navi ul {
     text-align: center;
     background-color: #FFFFFF;
     border: 1px solid #707070;
+    z-index: 2;
 }
 
-.g-navi ul li {
-    text-align: center;
+.g-navi ul {
+    display: block;
 }
 
 .g-navi ul li a {
@@ -66,6 +116,10 @@ header {
 .g-navi ul li a:hover {
     color: #FFFFFF;
     background-color: #E2563B;
+}
+
+.g-navi.active {
+    transform: translateY(0%);
 }
 
 /* main content */
