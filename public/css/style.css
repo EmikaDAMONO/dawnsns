@@ -20,11 +20,9 @@ header {
 #menu-name {
     width: 204px;
     height: 35px;
-
     position: absolute;
-    left: 80%;
-    top: 20px;
-    border: 1px solid #707070;
+    right: 1%;
+    top: 25px;
     display: flex;
     /* display:要素の表示方法 */
     flex-wrap: nowrap;
@@ -33,11 +31,13 @@ header {
     align-items: center;
     /* align-items:flex要素の縦位置設定 */
     color: #FFFFFF;
+
 }
 
 #menu-name img {
     border-radius: 50%;
     height: 35px;
+    width: 35px;
 }
 
 .menu-name-btn {
@@ -91,11 +91,10 @@ header {
 
 .g-navi {
     transform: translateY(-200%);
-
     display: block;
     position: absolute;
     left: 80%;
-    width: 256px;
+    width: 20%;
     text-align: center;
     background-color: #FFFFFF;
     border: 1px solid #707070;
@@ -109,7 +108,8 @@ header {
 .g-navi ul li a {
     display: block;
     color: #6C6C6C;
-    padding: 20px 0;
+    padding: 26px 0;
+    font-size: 12pt;
     /* padding:内側の余白設定 */
 }
 
@@ -123,6 +123,8 @@ header {
 }
 
 /* main content */
+
+
 #row {
     display: flex;
     flex-flow: row wrap;
@@ -134,5 +136,170 @@ header {
 
 #side-bar {
     flex: 0 0 19%;
+    height: 100vh;
     border-left: 1px solid #6C6C6C;
+    position: absolute;
+    right: 0%;
+    width: 20%;
+    font-size: 10pt;
+}
+
+#confirm {
+    font-size: 10pt;
+    color: #6C6C6C;
+    padding: 10px;
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.f-count {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* justify-content:flex要素の横位置設定 */
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.btn {
+    box-shadow: none;
+    border: 0 none;
+    background-color: #3C4767FC;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+
+.btn a {
+    display: block;
+}
+
+.bf {
+    width: 138px;
+    margin: 10px 0 15px auto;
+}
+
+.bf a {
+    color: #fff;
+    padding: 10px 0;
+}
+
+.login-name-follow {
+    margin-bottom: 10px;
+}
+
+.user-search {
+    margin: 30px auto;
+}
+
+.bs {
+    width: 138px;
+    margin: 10px auto;
+}
+
+.bs a {
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+
+.post-wrap {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    /* justify-content:flex要素の横位置設定 */
+    border-bottom: 3px solid #D7D7D7;
+    align-items: center;
+    height: 15vh;
+    padding: 15px;
+}
+
+.form-group {
+    height: 15vh;
+    margin: 20px;
+    width: 100vh;
+}
+
+.img-icon img {
+    border-radius: 50%;
+    height: 51px;
+    width: 51px;
+}
+
+.bp {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}
+
+.form-control {
+    width: 100vh;
+    height: 8vh;
+    border: none;
+    font-size: 12pt;
+    color: #D7D7D7;
+    opacity: 0.5;
+
+
+}
+
+
+.post-log {
+    display: block;
+
+    overflow: scroll
+}
+
+.post-table {
+    display: flex;
+    padding: 20px 40px;
+    color: #6C6C6C;
+    border-bottom: 1px solid #D7D7D7;
+    position: relative;
+    align-items: baseline;
+}
+
+.posted-data {
+    /* display:要素の表示方法 */
+    background-color: pink;
+    width: 100vh;
+}
+
+.p-u-image {
+    display: block;
+    position: relative;
+}
+
+.p-u-image img {
+    border-radius: 50%;
+    height: 51px;
+    width: 51px;
+}
+
+.p-user-name {
+    display: block;
+    position: absolute;
+    left: 110px;
+    font-size: 10pt;
+}
+
+.p-text {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 110px;
+    height: auto;
+    font-size: 12pt;
+}
+
+.p-c-time {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 10pt;
 }
