@@ -39,6 +39,9 @@ Route::get('/search','UsersController@index');
 //フォロー・フォロワーリスト
 Route::get('/follow-list','FollowsController@followList');
 Route::get('/follower-list','FollowsController@followerList');
+//ユーザー検索
+Route::get('/user-search','FollowsController@userSearch');
+
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 //投稿

@@ -42,7 +42,7 @@ echo "$user";
                         <span class="menu-v2"></span>
                         </div>
                         <p>
-                            <img src="/images/<?php
+                            <img src="/images/icons/<?php
 $image = Auth::user()->images;
 echo "$image";
 ?>"></p>
@@ -104,7 +104,7 @@ echo "$image";
             </div>
             <div class="user-search">
 <button type="button" class="btn bs">
-<a href="">ユーザー検索</a>
+<a href="/user-search">ユーザー検索</a>
 </button>
             </div>
         </div>

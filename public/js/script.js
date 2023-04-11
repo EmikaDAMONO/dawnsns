@@ -27,3 +27,25 @@ $(function () {
     $('.g-navi').removeClass('active'); //(.g-navi)にある(.active)も削除
   });
 });
+
+// モーダル部分
+$(function () {
+  $('#editModal').each(function () {
+    $(this).on('click', function () {
+      var target = $(this).data('target');
+      var modal = document.getElementById(target);
+      console.log(modal);
+      $(modal).fadeIn();
+      return false;
+    });
+  });
+
+  $('.modal-inner').on('click', function (e) {
+    if (!$(e.target).closest('.modal-content').length) {
+      console.log(1 + 1);
+      $('.js-modal').fadeOut();
+      return false;
+    }
+  });
+
+});

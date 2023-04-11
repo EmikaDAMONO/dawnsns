@@ -93,12 +93,13 @@ header {
     transform: translateY(-200%);
     display: block;
     position: absolute;
-    left: 80%;
+
     width: 20%;
+    right: 0px;
     text-align: center;
     background-color: #FFFFFF;
     border: 1px solid #707070;
-    z-index: 2;
+    z-index: 3;
 }
 
 .g-navi ul {
@@ -108,7 +109,7 @@ header {
 .g-navi ul li a {
     display: block;
     color: #6C6C6C;
-    padding: 26px 0;
+    padding: 28px 0;
     font-size: 12pt;
     /* padding:内側の余白設定 */
 }
@@ -132,6 +133,8 @@ header {
 
 #container {
     flex: 0 0 80%;
+    overflow: scroll;
+    height: 100vh;
 }
 
 #side-bar {
@@ -142,6 +145,8 @@ header {
     right: 0%;
     width: 20%;
     font-size: 10pt;
+    background-color: #fff;
+    z-index: 2;
 }
 
 #confirm {
@@ -213,8 +218,10 @@ header {
     /* justify-content:flex要素の横位置設定 */
     border-bottom: 3px solid #D7D7D7;
     align-items: center;
-    height: 15vh;
+    height: 100px;
     padding: 15px;
+    font-size: 12pt;
+    position: relative;
 }
 
 .form-group {
@@ -229,36 +236,45 @@ header {
     width: 51px;
 }
 
-.bp {
-    display: block;
-    position: absolute;
-    top: 25%;
-    left: 60%;
-}
 
 .form-control {
-    width: 100vh;
-    height: 8vh;
+    display: block;
+    position: absolute;
+    width: 65%;
+    top: 10px;
+    height: 100px;
     border: none;
     font-size: 12pt;
     color: #D7D7D7;
     opacity: 0.5;
+    left: 80px;
+}
 
-
+.bp {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 87%;
+    cursor: pointer;
 }
 
 
 .post-log {
     display: block;
+    overflow: scroll;
+    height: 100vh;
+}
 
-    overflow: scroll
+.postings {
+    display: block;
+    border-bottom: 1px solid #D7D7D7;
 }
 
 .post-table {
     display: flex;
     padding: 20px 40px;
     color: #6C6C6C;
-    border-bottom: 1px solid #D7D7D7;
+
     position: relative;
     align-items: baseline;
 }
@@ -287,19 +303,107 @@ header {
     font-size: 10pt;
 }
 
-.p-text {
-    display: block;
-    position: absolute;
-    top: 40px;
-    left: 110px;
-    height: auto;
-    font-size: 12pt;
-}
-
 .p-c-time {
     display: block;
     position: absolute;
     right: 20px;
     top: 20px;
     font-size: 10pt;
+}
+
+.p-text {
+    display: block;
+    position: relative;
+    top: -10px;
+    left: 20px;
+    height: auto;
+    font-size: 12pt;
+}
+
+.post-edit {
+    display: flex;
+    position: relative;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    display: block;
+    margin: 10px 0;
+    box-shadow: none;
+    border: 0 none;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-primary img {
+    border: 0 none;
+    height: 50px;
+    width: 50px;
+}
+
+.btn-danger {
+    display: block;
+    width: 51px;
+    height: 53px;
+    margin: 10px 30px;
+    cursor: pointer;
+    border-radius: 6%;
+    background: url(/images/trash.png);
+}
+
+.btn-danger:hover {
+    background: url(/images/trash_h.png);
+}
+
+/* モーダル設定 */
+.modal-main {
+    display: none;
+}
+
+.modal-inner {
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2000px;
+    height: 2000px;
+    background-color: rgba(51, 54, 49, 0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+}
+
+.modal-content {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    width: 784px;
+    height: 286px;
+    color: #6C6C6C;
+    opacity: 1;
+    position: fixed;
+    top: 179px;
+    left: 10%;
+    z-index: 5;
+}
+
+.edit-form-control {
+    display: block;
+    margin: 20px auto auto auto;
+    width: 692px;
+    height: 152px;
+    font-size: 12pt;
+    color: #D7D7D7;
+}
+
+.pullRight {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
 }
