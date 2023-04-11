@@ -9,17 +9,24 @@ class PostsController extends Controller
 {
     //
     public function index(){
-    $posts = DB::table('posts')->get();
-    return view('posts.index',['posts'=>$posts]);
+        $posts = DB::table('posts')
+            ->join('users', 'posts.user_id', '=', 'users.id')
+            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
+            ->latest('posts_created')
+            ->get();
+        return view('posts.index',['posts'=>$posts]);
     }
-        public function __construct()
+
+    public function __construct()
     {
         $this->middleware('auth');
     }
-        public function createForm()
+
+    public function createForm()
     {
         return view('posts.createForm');
     }
+
    public function create(Request $request)
     {
         $post = $request->input('newPost');

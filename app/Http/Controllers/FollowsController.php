@@ -15,13 +15,13 @@ class FollowsController extends Controller
         return view('follows.followerList');
     }
     public function userSearch(Request $request){
-        $SearchingUser = $request->input('userSearch');
-        if ($SearchingUser) {
-        $userSearch = DB::table('users')->where('username', 'LIKE', "%{$SearchingUser}%")->select('username', 'images', 'created_at')->latest('created_at')->get();
-        $searchImage = $userSearch->images;
-        };
-                return view('follows.usersearch');
+        $searchingUser = $request->input('userSearch');
+        if (!empty($SearchingUser)) {
+            $searchingUsers = DB::table('users')->where('username', 'LIKE', "%{$searchingUser}%")->select('username', 'images', 'created_at')->latest('created_at')->get();
+            $searchImage = $userSearch->images;
+        }else{
+                $searchingUsers = DB::table('users')->get();
         }
-
-
+        return view('follows.usersearch', compact('searchingUsers'));
+        }
     }
