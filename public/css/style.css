@@ -224,6 +224,33 @@ header {
     position: relative;
 }
 
+.search-wrap {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    /* justify-content:flex要素の横位置設定 */
+    border-bottom: 3px solid #D7D7D7;
+    height: 100px;
+    padding-top: 30px;
+    font-size: 12pt;
+    padding-left: 78px;
+}
+
+.search-form {
+    height: 51px;
+    display: block;
+    width: 391px;
+    font-size: 12pt;
+    opacity: 0.5;
+}
+
+.search-b {
+    display: block;
+    cursor: pointer;
+}
+
+
 .form-group {
     height: 15vh;
     margin: 20px;

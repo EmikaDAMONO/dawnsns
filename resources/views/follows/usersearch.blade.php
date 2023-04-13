@@ -3,19 +3,20 @@
 @section('content')
 <div class="container">
 
-        {!! Form::open(['url' => 'follow/search']) !!}
-            {!! Form::input('text','userSearch', null, ['required', 'class' => 'search-form', 'placeholder' => 'ユーザー検索']) !!}
-           <button type="submit" class="btn">
-            検索
-          </button>
-         {!! Form::close() !!}
+  <div class="search-wrap">
+    {!! Form::open(['url' => '/now-searching']) !!}
+    {!! Form::input('text','user_search', null, ['required', 'class' => 'search-form', 'placeholder' => 'ユーザー名']) !!}
+    <button type="submit" class="btn search-b">
+    検索
+    </button>
+    {!! Form::close() !!}
+  </div>
 
-</div>
-        @foreach($searchingUsers as $searchingUser)<!--繰り返し開始-->
-<p>
-  <img src="/images/icons/{{ $searchingUser->images }}">
-</p>
+        @foreach($findingUsers as $findingUser)<!--繰り返し開始-->
 
+  <p class="img-icon">
+    <img src="/images/icons/{{ $findingUser->images }}">
+  </p>
         @endforeach<!--繰り返しおしまい-->
-
+</div>
 @endsection
