@@ -247,7 +247,31 @@ header {
 
 .search-b {
     display: block;
+    position: absolute;
+    top: 115px;
+    left: 484px;
     cursor: pointer;
+}
+
+.search-b img {
+    height: 39px;
+    width: 41px;
+}
+
+.find-user-wrap {
+    display: flex;
+    padding: 20px 40px;
+    color: #6C6C6C;
+    position: relative;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.f-username {
+    display: block;
+    position: relative;
+    top: -15px;
+    margin-left: 20px;
 }
 
 
