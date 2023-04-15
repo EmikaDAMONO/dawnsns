@@ -27,13 +27,15 @@
           <p class="p-c-time">{{$post->posts_created }}</p>
           <p class="p-text">{{ $post->post }}</p>
         </div>
+        <!--ここから編集・削除ボタン分岐-->
+        @if ($post->user_id == $my_id)
         <div class="post-edit">
           <p class="p-update">
-          <button type="button" class="btn-primary" data-toggle="modal" data-target="#editModal">
-            <img src="images/edit.png">
-          </button>
+          <a href="" class="modalopen btn-primary" data-target="{{$post->posts_id}}">
+            <img class="life-img" src="images/edit.png" alt="teatime">
+          </a>
           </p>
-          <div class="modal-main js-modal" id="editModal" tabindex="-1">
+          <div class="modal-main js-modal" id="{{$post->posts_id}}" tabindex="-1">
             <div class="modal-inner">
               <div class="modal-content">
                 {{ Form::open(['url' => '/post/update']) }}
@@ -51,6 +53,7 @@
             </a>
           </p>
         </div>
+        @endif<!--分岐終了-->
       </div>
       @endforeach<!--繰り返しおしまい-->
     </div>

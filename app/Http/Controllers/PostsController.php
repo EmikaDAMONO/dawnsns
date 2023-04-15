@@ -17,7 +17,8 @@ class PostsController extends Controller
             ->where('follower_id', Auth::id())
             ->orWhere('user_id', Auth::id())
             ->get();
-        return view('posts.index',['posts'=>$posts]);
+        $my_id = Auth::user()->id;
+        return view('posts.index', compact('posts', 'my_id'),['posts'=>$posts]);
     }
 
     public function __construct()

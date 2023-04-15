@@ -41,7 +41,11 @@ Route::get('/follow-list','FollowsController@followList');
 Route::get('/follower-list','FollowsController@followerList');
 //ユーザー検索
 Route::get('/user-search','FollowsController@userSearch');
-Route::post('/now-searching','FollowsController@userSearch');
+Route::get('/now-searching','FollowsController@userSearch');
+//フォローする
+Route::post('/following','FollowsController@follow');
+//リムる
+Route::post('/removing','FollowsController@remove');
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 //投稿

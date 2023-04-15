@@ -30,7 +30,7 @@ $(function () {
 
 // モーダル部分
 $(function () {
-  $('#editModal').each(function () {
+  $('.modalopen').each(function () {
     $(this).on('click', function () {
       var target = $(this).data('target');
       var modal = document.getElementById(target);

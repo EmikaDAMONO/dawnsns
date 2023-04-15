@@ -224,56 +224,6 @@ header {
     position: relative;
 }
 
-.search-wrap {
-    display: flex;
-    /* display:要素の表示方法 */
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    /* justify-content:flex要素の横位置設定 */
-    border-bottom: 3px solid #D7D7D7;
-    height: 100px;
-    padding-top: 30px;
-    font-size: 12pt;
-    padding-left: 78px;
-}
-
-.search-form {
-    height: 51px;
-    display: block;
-    width: 391px;
-    font-size: 12pt;
-    opacity: 0.5;
-}
-
-.search-b {
-    display: block;
-    position: absolute;
-    top: 115px;
-    left: 484px;
-    cursor: pointer;
-}
-
-.search-b img {
-    height: 39px;
-    width: 41px;
-}
-
-.find-user-wrap {
-    display: flex;
-    padding: 20px 40px;
-    color: #6C6C6C;
-    position: relative;
-    align-items: baseline;
-    justify-content: flex-start;
-}
-
-.f-username {
-    display: block;
-    position: relative;
-    top: -15px;
-    margin-left: 20px;
-}
-
 
 .form-group {
     height: 15vh;
@@ -457,4 +407,131 @@ header {
     position: absolute;
     bottom: 3%;
     right: 5%;
+}
+
+.search-wrap {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    /* justify-content:flex要素の横位置設定 */
+    border-bottom: 3px solid #D7D7D7;
+    height: 100px;
+    padding-top: 30px;
+    font-size: 12pt;
+    padding-left: 78px;
+    position: relative;
+}
+
+.contents-main {
+    display: block;
+    overflow: scroll;
+}
+
+.search-form {
+    height: 51px;
+    display: block;
+    width: 391px;
+    font-size: 12pt;
+    opacity: 0.5;
+}
+
+.search-b {
+    display: block;
+    position: relative;
+    top: -50px;
+    left: 420px;
+    cursor: pointer;
+}
+
+.search-b img {
+    height: 39px;
+    width: 41px;
+}
+
+.find-user-wrap {
+    display: flex;
+    padding: 20px 40px;
+    color: #6C6C6C;
+    position: relative;
+    align-items: baseline;
+    justify-content: flex-start;
+    overflow: scroll;
+}
+
+
+.f-username {
+    display: block;
+    position: relative;
+    top: -20px;
+    margin-left: 20px;
+}
+
+.remove-b {
+    display: block;
+    height: 41px;
+    width: 138px;
+    background-color: #E2563B;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    border: 0 none;
+    position: absolute;
+    top: 25px;
+    right: 100pt;
+}
+
+.follow-b {
+    display: block;
+    height: 41px;
+    width: 138px;
+    background-color: #4B71CABF;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    border: 0 none;
+    position: absolute;
+    top: 25px;
+    right: 100pt;
+}
+
+.contents-wrap {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    /* justify-content:flex要素の横位置設定 */
+    border-bottom: 3px solid #D7D7D7;
+    height: auto;
+    padding: 20px;
+    font-size: 12pt;
+    padding-left: 40px;
+    position: relative;
+}
+
+.list-name {
+    font-size: 22pt;
+    color: #6C6C6C;
+}
+
+.icons-box {
+    display: flex;
+    /* display:要素の表示方法 */
+    flex-wrap: rap;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.icon-link {
+    display: block;
+}
+
+.icon-link img {
+    border-radius: 50%;
+    height: 51px;
+    width: 51px;
 }

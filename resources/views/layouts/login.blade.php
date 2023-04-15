@@ -77,7 +77,7 @@ echo "$image";
                     use Illuminate\Support\Facades\DB;
                     $id = Auth::user()->id;
                     $follow = DB::table('follows')
-                    ->where('follow_id',$id)
+                    ->where('follower_id',$id)
                     ->count();
                     echo "$follow";
                     ?>
@@ -92,7 +92,7 @@ echo "$image";
                 <p>
                                         <?php
                     $follower = DB::table('follows')
-                    ->where('follower_id',$id)
+                    ->where('follow_id',$id)
                     ->count();
                     echo "$follower";
                     ?>
