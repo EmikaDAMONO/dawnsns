@@ -2,9 +2,16 @@
 
 @section('content')
   <div class='container'>
+    <h2 class="list-name">Follower list</h2>
 <div class="contents-wrap">
 
-<h2 class="list-name">Follower list</h2>
+<div class="icons-box">
+  @foreach ($icons as $icon)
+  <p class="icon-link">
+    <a href=""><img src="/images/icons/{{ $icon->images }}"></a>
+  </p>
+  @endforeach
+</div>
 
 </div>
     <div class="post-log">

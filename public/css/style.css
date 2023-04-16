@@ -516,6 +516,8 @@ header {
 .list-name {
     font-size: 22pt;
     color: #6C6C6C;
+    margin-top: 30px;
+    margin-left: 40px;
 }
 
 .icons-box {
@@ -524,10 +526,14 @@ header {
     flex-wrap: rap;
     justify-content: flex-start;
     align-items: baseline;
+    position: relative;
+    margin-left: 50px;
+    width: 80%;
 }
 
 .icon-link {
     display: block;
+    margin: 10px;
 }
 
 .icon-link img {

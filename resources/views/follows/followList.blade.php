@@ -2,8 +2,9 @@
 
 @section('content')
   <div class='container'>
+    <h2 class="list-name">Follow list</h2>
 <div class="contents-wrap">
-<h2 class="list-name">Follow list</h2>
+
 <div class="icons-box">
   @foreach ($icons as $icon)
   <p class="icon-link">

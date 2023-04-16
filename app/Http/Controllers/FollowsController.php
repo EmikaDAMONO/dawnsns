@@ -20,10 +20,10 @@ class FollowsController extends Controller
             ->get();
 
         $icons = DB::table('follows')
-            ->leftJoin('users', 'follows.user_id', '=', 'users.id')
+            ->join('users', 'follows.follow_id', '=', 'users.id')
             ->select('users.images', 'follows.follow_id', 'follows.follower_id')
-            ->latest('posts_created')
-            ->where('follow_id', Auth::id())
+            ->latest('follows.created_at')
+            ->where('follower_id', Auth::id())
             ->get();
 
         return view('follows.followList', compact('posts', 'icons'),['posts'=>$posts]);
@@ -36,7 +36,13 @@ class FollowsController extends Controller
         ->latest('posts_created')
         ->where('follow_id', Auth::id())
         ->get();
-        return view('follows.followerList', compact('posts'),['posts'=>$posts]);
+        $icons = DB::table('follows')
+        ->join('users', 'follows.follower_id', '=', 'users.id')
+        ->select('users.images', 'follows.follow_id', 'follows.follower_id')
+        ->latest('follows.created_at')
+        ->where('follow_id', Auth::id())
+        ->get();
+        return view('follows.followerList', compact('posts', 'icons'),['posts'=>$posts]);
     }
 
     public function userSearch(Request $request){
