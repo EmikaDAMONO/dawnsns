@@ -46,6 +46,10 @@ Route::get('/now-searching','FollowsController@userSearch');
 Route::post('/following','FollowsController@follow');
 //リムる
 Route::post('/removing','FollowsController@remove');
+//プロフィール
+Route::post('/my_friend', 'FollowsController@friendsProf');
+Route::get('/my_friend', 'FollowsController@friendsProf');
+
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 //投稿

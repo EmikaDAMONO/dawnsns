@@ -7,8 +7,11 @@
 
 <div class="icons-box">
   @foreach ($icons as $icon)
-  <p class="icon-link">
-    <a href=""><img src="/images/icons/{{ $icon->images }}"></a>
+  <p class="icons">
+    {{ Form::open(['url' => '/my_friend']) }}
+    {{ Form::hidden('friendsId', $icon->id) }}
+    <button type="submit" class="icon-img"><img src="/images/icons/{{ $icon->images }}"></button>
+    {{ Form::close() }}
   </p>
   @endforeach
 </div>

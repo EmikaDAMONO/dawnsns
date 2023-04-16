@@ -21,7 +21,7 @@ class FollowsController extends Controller
 
         $icons = DB::table('follows')
             ->join('users', 'follows.follow_id', '=', 'users.id')
-            ->select('users.images', 'follows.follow_id', 'follows.follower_id')
+            ->select('users.username', 'users.id', 'users.images', 'follows.follow_id', 'follows.follower_id')
             ->latest('follows.created_at')
             ->where('follower_id', Auth::id())
             ->get();
@@ -30,18 +30,19 @@ class FollowsController extends Controller
     }
     public function followerList(){
         $posts = DB::table('posts')
-        ->leftJoin('users', 'posts.user_id', '=', 'users.id')
-        ->leftJoin('follows', 'posts.user_id', '=', 'follows.follower_id')
-        ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id','follows.follow_id', 'follows.follower_id')
-        ->latest('posts_created')
-        ->where('follow_id', Auth::id())
-        ->get();
+            ->leftJoin('users', 'posts.user_id', '=', 'users.id')
+            ->leftJoin('follows', 'posts.user_id', '=', 'follows.follower_id')
+            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id','follows.follow_id', 'follows.follower_id')
+            ->latest('posts_created')
+            ->where('follow_id', Auth::id())
+            ->get();
+
         $icons = DB::table('follows')
-        ->join('users', 'follows.follower_id', '=', 'users.id')
-        ->select('users.images', 'follows.follow_id', 'follows.follower_id')
-        ->latest('follows.created_at')
-        ->where('follow_id', Auth::id())
-        ->get();
+            ->join('users', 'follows.follower_id', '=', 'users.id')
+            ->select('users.username', 'users.id', 'users.images', 'follows.follow_id', 'follows.follower_id')
+            ->latest('follows.created_at')
+            ->where('follow_id', Auth::id())
+            ->get();
         return view('follows.followerList', compact('posts', 'icons'),['posts'=>$posts]);
     }
 
@@ -78,4 +79,22 @@ class FollowsController extends Controller
             ->delete();
             return back();
         }
+        public function friendsProf(Request $request){
+            $friends_id = $request->input('friendsId');
+            $friend_report = DB::table('users')
+            ->select('username', 'images', 'bio', 'id')
+            ->where('id', $friends_id)
+            ->first();
+            $my_follow_users = DB::table('follows')
+            ->where('follower_id', Auth::id())
+            ->pluck('follow_id');
+            $posts = DB::table('posts')
+            ->leftJoin('users', 'posts.user_id', '=', 'users.id')
+            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
+            ->latest('posts_created')
+            ->where('user_id', $friends_id)
+            ->get();
+        return view('follows.friendsProf', compact('friend_report', 'my_follow_users', 'posts'),['posts'=>$posts]);
+        }
+
     }
