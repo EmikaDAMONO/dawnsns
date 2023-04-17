@@ -19,14 +19,14 @@
     </div>
 @if ($my_follow_users->contains($friend_report->id))
         <p>
-          {{ Form::open(['url' => '/removing']) }}
+          {{ Form::open(['url' => '/p-removing']) }}
           {{ Form::hidden('followerId', $friend_report->id) }}
           <button type="submit" class="p-remove-b">フォローを外す</button>
           {{ Form::close() }}
         </p>
 @else
         <p>
-          {{ Form::open(['url' => '/following']) }}
+          {{ Form::open(['url' => '/p-following']) }}
           {{ Form::hidden('followId', $friend_report->id) }}
           <button type="submit" class="p-follow-b">フォローする</button>
           {{ Form::close() }}

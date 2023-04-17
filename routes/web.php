@@ -49,8 +49,12 @@ Route::post('/removing','FollowsController@remove');
 //プロフィール
 Route::post('/my_friend', 'FollowsController@friendsProf');
 Route::get('/my_friend', 'FollowsController@friendsProf');
+//プロフィール:フォローする
+Route::post('/p-following','FollowsController@followProf');
+//プロフィール:リムる
+Route::post('/p-removing','FollowsController@removeProf');
 
-//ログアウト
+//プロフィール:ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 //投稿
 Route::get('post/create-form', 'PostsController@createForm');

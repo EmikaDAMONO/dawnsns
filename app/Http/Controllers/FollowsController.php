@@ -96,5 +96,51 @@ class FollowsController extends Controller
             ->get();
         return view('follows.friendsProf', compact('friend_report', 'my_follow_users', 'posts'),['posts'=>$posts]);
         }
+        public function followProf(Request $request){
+            $my_id = Auth::id();
+            $followed = $request->input('followId');
+            DB::table('follows')->insert([
+                'follower_id' => $my_id,
+                'follow_id' => $followed,
+            ]);
+            $friends_id = $followed;
+            $friend_report = DB::table('users')
+            ->select('username', 'images', 'bio', 'id')
+            ->where('id', $friends_id)
+            ->first();
+            $my_follow_users = DB::table('follows')
+            ->where('follower_id', Auth::id())
+            ->pluck('follow_id');
+            $posts = DB::table('posts')
+            ->leftJoin('users', 'posts.user_id', '=', 'users.id')
+            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
+            ->latest('posts_created')
+            ->where('user_id', $friends_id)
+            ->get();
+        return view('follows.friendsProf', compact('friend_report', 'my_follow_users', 'posts'),['posts'=>$posts]);
 
+        }
+        public function removeProf(Request $request){
+            $my_id = Auth::id();
+            $good_bye = $request->input('followerId');
+            DB::table('follows')
+            ->where('follower_id', $my_id)
+            ->where('follow_id', $good_bye)
+            ->delete();
+            $friends_id = $good_bye;
+            $friend_report = DB::table('users')
+            ->select('username', 'images', 'bio', 'id')
+            ->where('id', $friends_id)
+            ->first();
+            $my_follow_users = DB::table('follows')
+            ->where('follower_id', Auth::id())
+            ->pluck('follow_id');
+            $posts = DB::table('posts')
+            ->leftJoin('users', 'posts.user_id', '=', 'users.id')
+            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
+            ->latest('posts_created')
+            ->where('user_id', $friends_id)
+            ->get();
+        return view('follows.friendsProf', compact('friend_report', 'my_follow_users', 'posts'),['posts'=>$posts]);
+        }
     }
