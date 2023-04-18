@@ -61,7 +61,9 @@ class LoginController extends Controller
 
     public function login(Request $request){
         if($request->isMethod('post')){
-
+        $pass = $request->input('password');
+        $pass_count = mb_strlen($pass);
+        $request->session()->put('pass_count', $pass_count);
             $data=$request->only('mail','password');
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと

@@ -32,7 +32,7 @@ Route::get('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 
 Route::get('/top','PostsController@index');
-
+//プロフィール
 Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');
@@ -46,7 +46,7 @@ Route::get('/now-searching','FollowsController@userSearch');
 Route::post('/following','FollowsController@follow');
 //リムる
 Route::post('/removing','FollowsController@remove');
-//プロフィール
+//フレンドプロフィール
 Route::post('/my_friend', 'FollowsController@friendsProf');
 Route::get('/my_friend', 'FollowsController@friendsProf');
 //プロフィール:フォローする

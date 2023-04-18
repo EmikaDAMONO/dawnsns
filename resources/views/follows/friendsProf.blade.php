@@ -5,7 +5,7 @@
   <div class="contents-wrap">
 
     <div class="prof-box">
-      <p class="f-icon-img">
+      <p class="prof-icon-img">
       <img src="/images/icons/{{ $friend_report->images }}">
       </p>
       <p class="prof-t">Name</p>
