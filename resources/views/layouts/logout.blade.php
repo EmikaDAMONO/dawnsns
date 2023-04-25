@@ -21,13 +21,16 @@
 </head>
 <body>
     <header>
+        <div class="entrance-header">
         <h1><img src="images/main_logo.png"></h1>
-        <p>Social Network Service</p>
+        </div>
+
     </header>
     <div id="container">
         @yield('content')
     </div >
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <footer>
+
+    </footer>
 </body>
 </html>

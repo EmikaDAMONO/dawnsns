@@ -46,34 +46,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-             //ユーザー登録用バリデーション
-            'username' => 'required|min:4|max:12',
-            'mail' => 'required|email|min:4|max:12|unique:users',
-            'password' => 'required|alpha_num|min:4|max:12',
-            'password-confirm' => 'required|min:4|max:12|same:password',
-            //プロフィール更新用バリデーション
-            'profile-username' => 'min:4|max:12',
-            'profile-mail' => ['email', 'min:4', 'max:12', 'unique:users', Rule::exists('users', 'mail')],
-            'profile-new-password' => 'required|alpha_num|min:4|max:12|different:password',
-            'profile-bio' => 'min:200',
-            'icon-image' => 'alpha_num|image',
-        ],
-    [
-		'mail.required' => '必須項目です',
-		'mail.email' => 'メールアドレスではありません',
-		'password.required' => '必須項目です',
-		'password.min' => '4文字以上で入力してください',
-        'password.max' => '12文字以下で入力してください',
-		'password-confirm.required' => '必須項目です',
-		'password-confirm.min' => '4文字以上で入力してください',
-		'password-confirm.max' => '12文字以下で入力してください',
-		'password-confirm.same' => 'パスワードと確認用パスワードが一致していません',
-	]
-    );
-    }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -93,15 +66,37 @@ class RegisterController extends Controller
     }
 
 
+
     // public function registerForm(){
     //     return view("auth.register");
     // }
 
     public function register(Request $request){
-session()->put('added_name', $request->input('username'));
+    session()->put('added_name', $request->input('username'));
         if($request->isMethod('post')){
-            $data = $request->input();
-
+            $request->validate([
+            'username' => 'required|min:4|max:12',
+            'mail' => 'required|email|min:4|max:12|unique:users,mail',
+            'password' => 'required|regex:/^[a-zA-Z0-9]+$/|min:4|max:12',
+            'password_confirmation' => 'required|same:password'
+],
+    [
+        'username.required' => '＊ユーザー名は入力必須項目です',
+        'username.min' => '＊ユーザー名は4文字以上で入力してください',
+        'pusername.max' => '＊ユーザー名は12文字以下で入力してください',
+        'mail.required' => '＊メールアドレスは入力必須項目です',
+        'mail.email' => '＊入力された文字列はメールアドレスではありません',
+        'mail.min' => '＊メールアドレスは4文字以上で入力してください',
+        'mail.max' => '＊メールアドレスは12文字以下で入力してください',
+        'mail.unique' => '＊既に使用されているメールアドレスです',
+        'password.required' => '＊パスワードは入力必須項目です',
+        'password.min' => '＊パスワードは4文字以上で入力してください',
+        'password.max' => '＊パスワードは12文字以下で入力してください',
+        'password_confirmation.required' => '＊確認用パスワードは入力必須項目です',
+        'password_confirmation.same' => '＊パスワードと確認用パスワードが一致していません'
+    ]
+    );
+        $data = $request->input();
             $this->create($data);
             return redirect('added');
         }
@@ -109,7 +104,11 @@ session()->put('added_name', $request->input('username'));
 
     }
 
+
+
+
     public function added(){
-        return view('auth.added');
+        $added_name = session('added_name');
+        return view('auth.added', compact('added_name'));
     }
 }

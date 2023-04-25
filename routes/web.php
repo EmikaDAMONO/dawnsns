@@ -18,6 +18,8 @@
 
 //Auth::routes();
 
+//test
+Route::get('/test', 'PostsController@test');
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
@@ -34,8 +36,8 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::get('/top','PostsController@index');
 //プロフィール
 Route::get('/profile','UsersController@profile');
+Route::post('/update_prof','UsersController@profUp');
 
-Route::get('/search','UsersController@index');
 //フォロー・フォロワーリスト
 Route::get('/follow-list','FollowsController@followList');
 Route::get('/follower-list','FollowsController@followerList');
@@ -54,14 +56,11 @@ Route::post('/p-following','FollowsController@followProf');
 //プロフィール:リムる
 Route::post('/p-removing','FollowsController@removeProf');
 
-//プロフィール:ログアウト
+//ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 //投稿
-Route::get('post/create-form', 'PostsController@createForm');
 Route::post('/index', 'PostsController@index');
 Route::get('/index', 'PostsController@index');
-Route::get('post/create-form', 'PostsController@createForm');
 Route::post('post/create', 'PostsController@create');
-Route::get('post/{id}/update-form', 'PostsController@updateForm');
 Route::post('post/update', 'PostsController@update');
 Route::get('post/{id}/delete', 'PostsController@delete');

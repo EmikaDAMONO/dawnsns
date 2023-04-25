@@ -3,19 +3,24 @@
 @section('content')
 
 <div id="clear">
-<p>
-<?php
-$added_name = session('added_name');
-echo $added_name;
-?>
-さん、</p>
-<p>ようこそ！DAWNSNSへ！</p>
-<p>ユーザー登録が完了しました。</p>
-<p>さっそく、ログインをしてみましょう。</p>
-<?php
-session()->flush();
-?>
-<p class="btn"><a href="/login">ログイン画面へ</a></p>
+  <div class="entrance-box">
+    <p class="added-name">{{$added_name}}さん</p>
+    <p class="youkoso">ようこそ！DAWNSNSへ！</p>
+    <div class="e-form-box">
+      <p class="e-form-type">ユーザー登録が完了しました。</p>
+      <p class="e-form-type">さっそく、ログインをしてみましょう。</p>
+    </div>
+    <?php
+    session()->flush();
+    ?>
+    <p class="back-button">
+      <button onclick="location.href='/login'" class="e-btn">
+    </p>
+
+    ログイン画面へ
+  </button>
+  </div>
+
 </div>
 
 @endsection

@@ -42,7 +42,6 @@ $(function () {
 
   $('.modal-inner').on('click', function (e) {
     if (!$(e.target).closest('.modal-content').length) {
-      console.log(1 + 1);
       $('.js-modal').fadeOut();
       return false;
     }

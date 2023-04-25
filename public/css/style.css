@@ -254,7 +254,7 @@ header {
 .bp {
     display: block;
     position: absolute;
-    top: 70px;
+    top: 80px;
     left: 87%;
     cursor: pointer;
 }
@@ -578,7 +578,6 @@ header {
 
 .bio-box {
     display: flex;
-    /* display:要素の表示方法 */
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
@@ -596,6 +595,12 @@ header {
     position: absolute;
     left: 170px;
     width: 250px;
+}
+
+.prof-icon-img {
+    display: block;
+    position: relative;
+    left: 10%;
 }
 
 .prof-icon-img img {
@@ -637,34 +642,122 @@ header {
 }
 
 .my-profile-box {
-    display: block;
-    width: 80%;
-    padding: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 30px;
 }
 
 .icon-up {
     display: block;
-    width: 300px;
+    width: 350px;
     height: 100px;
     background-color: #F2F2F2;
-    border-bottom: solid 2px #707070;
-    margin: 10px;
+    border-bottom: solid 1px #707070;
+    position: absolute;
+    left: 200px;
 }
 
-.icon-up label {
+
+.imgbtn {
     display: block;
     padding: 10px;
     color: #6C6C6C;
-    background-color: #FFFFFF;
-    cursor: pointer;
     position: relative;
-    top: 35px;
-    left: 90px;
+    top: 30px;
+    left: 110px;
     font-size: 9pt;
-    width: 100px;
     text-align: center;
 }
 
-input[type="file"] {
-    display: none;
+.type-name-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 18pt;
+    color: #6C6C6C;
+    margin: 20px;
+    position: relative;
+    left: 40%;
+}
+
+.type-bio-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 18pt;
+    color: #6C6C6C;
+    margin: 20px;
+    position: relative;
+    left: 40%;
+    height: 80px;
+}
+
+.p-content {
+    display: block;
+    position: relative;
+    left: 0%;
+}
+
+.input {
+    display: block;
+    background-color: #F2F2F2;
+    box-shadow: none;
+    border: 0 none;
+    border-bottom: solid 1px #707070;
+    color: #6C6C6C;
+    font-size: 12pt;
+    position: absolute;
+    left: 200px;
+    width: 280px;
+}
+
+.input-bio {
+    display: block;
+    background-color: #F2F2F2;
+    box-shadow: none;
+    border: 0 none;
+    border-bottom: solid 1px #707070;
+    color: #6C6C6C;
+    font-size: 9pt;
+    position: absolute;
+    left: 200px;
+    height: 72px;
+    width: 280px;
+}
+
+.now-pass {
+    box-shadow: none;
+    border: 0 none;
+    border-bottom: solid 1px #707070;
+    font-size: 12pt;
+    color: #6C6C6C;
+    display: block;
+    position: absolute;
+    left: 200px;
+    width: 280px;
+
+}
+
+.btn-p-up {
+    box-shadow: none;
+    border: 0 none;
+    background-color: #7B9979;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 12;
+    width: 138px;
+    height: 43px;
+    position: relative;
+    top: 80px;
+    left: 400px;
+    cursor: pointer;
+}
+
+.alert {
+    font-size: 6pt;
+    color: #E2563B;
+    font-weight: bold;
+    margin: 10px;
 }

@@ -86,14 +86,14 @@ class FollowsController extends Controller
             ->where('id', $friends_id)
             ->first();
             $my_follow_users = DB::table('follows')
-            ->where('follower_id', Auth::id())
-            ->pluck('follow_id');
+                ->where('follower_id', Auth::id())
+                ->pluck('follow_id');
             $posts = DB::table('posts')
-            ->leftJoin('users', 'posts.user_id', '=', 'users.id')
-            ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
-            ->latest('posts_created')
-            ->where('user_id', $friends_id)
-            ->get();
+                ->leftJoin('users', 'posts.user_id', '=', 'users.id')
+                ->select('posts.id as posts_id', 'posts.created_at as posts_created', 'posts.updated_at as posts_updated', 'users.username', 'posts.post', 'users.images', 'posts.user_id')
+                ->latest('posts_created')
+                ->where('user_id', $friends_id)
+                ->get();
         return view('follows.friendsProf', compact('friend_report', 'my_follow_users', 'posts'),['posts'=>$posts]);
         }
         public function followProf(Request $request){
